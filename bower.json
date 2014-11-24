@@ -1,0 +1,19 @@
+{
+  "name": "jquery-menuOnScroll",
+  "version": "0.1.0",
+  "description": "A jQuery plugin that allows you to auto update your navigation menu automatically when you scroll",
+  "main": "src/jquery.menuOnScroll.js",
+  "keywords": [
+    "\"jquery\"",
+    "\"plugin\"",
+    "\"menu",
+    "\"navigation",
+    "scroll\"",
+    "auto"
+  ],
+  "authors": [
+    "Khoa Pham"
+  ],
+  "license": "MIT",
+  "homepage": "http://khoapham.me"
+}

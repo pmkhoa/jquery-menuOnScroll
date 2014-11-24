@@ -1,0 +1,30 @@
+{
+  "name": "menuOnScroll",
+  "title": "jQuery menuOnScroll",
+  "description": "A jQuery plugin that allows you to auto update your navigation menu automatically when you scroll",
+  "keywords": [
+    "\"jquery\"",
+    "\"plugin\"",
+    "\"menu",
+    "\"navigation",
+    "scroll\"",
+    "auto"
+  ],
+  "version": "0.1.0",
+  "author": {
+    "name": "Khoa Pham",
+    "email": "khoa.pham@me.com",
+    "url": "https://github.com/pmkhoa"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ],
+  "bugs": "https://github.com/jquery-boilerplate/boilerplate/issues",
+  "homepage": "http://jqueryboilerplate.com",
+  "docs": "https://github.com/jquery-boilerplate/boilerplate#readme",
+  "dependencies": {
+    "jquery": ">=1.4"
+  }
+}
