@@ -1,7 +1,7 @@
 /*
  *  jQuery menuOnScroll - v0.1.0
  *  A jQuery plugin that allows you to auto update your navigation menu automatically when you scroll
- *  http://jqueryboilerplate.com
+ *  http://menuonscroll.com
  *
  *  Made by Khoa Pham
  *  Under MIT License
@@ -23,9 +23,11 @@
         defaults = {
           menuActiveClass: "active",
           menuSelector: ".menu-item",
-          footerOffset: 100,
-          scrollOnClickOffset: 40
+          footerOffset: 0,
+          headerOffset: 0,
+          scrollOnClickOffset: 80
         },
+
         settings;
 
     plugin.init = function() {
@@ -62,7 +64,8 @@
       $(window).on({
         "touchmove": function() {
           var scrollTop = $(this).scrollTop();
-          plugin.updateMenuOnScroll(scrollTop);
+          if (scrollTop >= 0)
+            plugin.updateMenuOnScroll(scrollTop);
         }
       });
     };
@@ -70,7 +73,8 @@
     plugin.mouseScroll = function() {
       $(window).on("scroll", function() {
         var scrollTop = $(this).scrollTop();
-        plugin.updateMenuOnScroll(scrollTop);
+        if (scrollTop >= 0)
+          plugin.updateMenuOnScroll(scrollTop);
       });
     };
 
@@ -123,6 +127,7 @@
     };
 
     plugin.setActiveMenuIndex = function(scrollTop) {
+      scrollTop = settings.headerOffset + scrollTop;
       for (var i = 0; i < menuItemsLength; i++) {
         if ( scrollTop + winHeight > docHeight - settings.footerOffset ) {
           activeMenuIndex = menuItemsLength - 1;

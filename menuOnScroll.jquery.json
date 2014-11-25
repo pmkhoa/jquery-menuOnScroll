@@ -21,10 +21,8 @@
       "type": "MIT"
     }
   ],
-  "bugs": "https://github.com/jquery-boilerplate/boilerplate/issues",
-  "homepage": "http://jqueryboilerplate.com",
-  "docs": "https://github.com/jquery-boilerplate/boilerplate#readme",
+  "homepage": "http://menuonscroll.com",
   "dependencies": {
-    "jquery": ">=1.4"
+    "jquery": ">=1.8"
   }
 }
