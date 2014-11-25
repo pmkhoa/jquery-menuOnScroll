@@ -25,7 +25,7 @@
           menuSelector: ".menu-item",
           footerOffset: 0,
           headerOffset: 0,
-          scrollOnClickOffset: 80
+          scrollOnClickOffset: 20
         },
 
         settings;

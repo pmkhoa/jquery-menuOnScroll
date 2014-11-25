@@ -50,7 +50,7 @@ Default: ``"active"``
 
 The class that attaches to the menu item when it's active.
 
-------
+---
 **menuSelector**
 
 Type: ``Class Selector``
@@ -59,7 +59,7 @@ Default: ``".menu-item"``
 
 The class name of the menu item.
 
-------
+---
 **headerOffset**
 
 Type: Number
@@ -68,7 +68,7 @@ Default: 0
 
 The height of the fixed header
 
-------
+---
 **footerOffset**
 
 Type: ``Number``
@@ -78,11 +78,11 @@ Default: ``0``
 The offset value of footer (if has one), this is used when you want to notify
 the position of last menu item from the bottom of the page.
 
-------
+---
 **scrollOnClickOffset**
 
 Type: ``Number``
 
-Default: ``80``
+Default: ``20``
 
 The offset value used for scroll to element when the menu item is clicked.
