@@ -101,8 +101,12 @@
       $('html,body').stop().animate({
         scrollTop: target.offset().top - settings.scrollOnClickOffset
       }, 400, function(e) { 
-        e.preventDefault();
-        window.location.hash = targetHash; 
+        if(history.pushState) {
+          history.pushState(null, null, "#"+targetHash);
+        }
+        else {
+          window.location.hash = "#"+targetHash;
+        }
       });
     };
 
