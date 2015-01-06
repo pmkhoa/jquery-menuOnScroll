@@ -39,9 +39,9 @@
       plugin.setDimension();
       plugin.setMenuItems();
       plugin.setContainerScrollTop();
-      plugin.updateMenuOnScroll(0); // This make sure that the first nav will be set onload.
       plugin.menuOnClick();
       plugin.windowOnScroll();
+      plugin.initMenuOnLoad(); // This make sure that the first nav will be set onload.
     };
 
     // ===================================================
@@ -76,6 +76,16 @@
       $(menuItems[activeMenuIndex]).addClass(settings.menuActiveClass);
     };
 
+    plugin.initMenuOnLoad = function() {
+      $(window).load(function() {
+        var target = $(location.hash);
+        var targetHash = location.hash.slice(1);
+        target = target.length ? target : $('[name='+this.hash.slice(1)+']');
+        plugin.scrollTo(target, targetHash);
+      });
+    };
+
+
     plugin.menuOnClick = function(element) {
       $(settings.menuSelector).find("a").on("click", function(event) {
         event.preventDefault();
@@ -90,9 +100,11 @@
     };
 
     plugin.scrollTo = function(target, targetHash) {
+      var scrollTopVal = target.offset().top - settings.scrollOnClickOffset
       $('html,body').stop().animate({
-        scrollTop: target.offset().top - settings.scrollOnClickOffset
+        scrollTop: scrollTopVal
       }, 400, function(e) { 
+        plugin.updateMenuOnScroll(scrollTopVal);
         if(history.pushState) {
           history.pushState(null, null, "#"+targetHash);
         }
@@ -151,4 +163,4 @@
     });
   };
 
-})(jQuery);
+}
