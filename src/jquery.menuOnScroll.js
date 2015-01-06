@@ -162,5 +162,4 @@
       plugin.init();
     });
   };
-
-}
+})(jQuery);
