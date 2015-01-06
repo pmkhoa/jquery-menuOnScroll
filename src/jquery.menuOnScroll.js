@@ -77,12 +77,15 @@
     };
 
     plugin.initMenuOnLoad = function() {
-      $(window).load(function() {
-        var target = $(location.hash);
-        var targetHash = location.hash.slice(1);
-        target = target.length ? target : $('[name='+this.hash.slice(1)+']');
+      var target = $(location.hash);
+      var targetHash = location.hash.slice(1);
+      if (location.hash !== '') {
+        target = target.length ? target : $('[name='+location.hash.slice(1)+']');
         plugin.scrollTo(target, targetHash);
-      });
+      }
+      else {
+        plugin.updateMenuOnScroll(0);
+      }
     };
 
 
