@@ -77,15 +77,10 @@
     };
 
     plugin.initMenuOnLoad = function() {
-      var target = $(location.hash);
-      var targetHash = location.hash.slice(1);
-      if (location.hash !== '') {
-        target = target.length ? target : $('[name='+location.hash.slice(1)+']');
-        plugin.scrollTo(target, targetHash);
-      }
-      else {
-        plugin.updateMenuOnScroll(0);
-      }
+      $(window).load(function() {
+        var scrollTop = $(window).scrollTop();
+        plugin.updateMenuOnScroll(scrollTop);
+      });
     };
 
 
@@ -104,10 +99,10 @@
 
     plugin.scrollTo = function(target, targetHash) {
       var scrollTopVal = target.offset().top - settings.scrollOnClickOffset
+      plugin.updateMenuOnScroll(scrollTopVal);
       $('html,body').stop().animate({
         scrollTop: scrollTopVal
-      }, 400, function(e) { 
-        plugin.updateMenuOnScroll(scrollTopVal);
+      }, 300, function(e) { 
         if(history.pushState) {
           history.pushState(null, null, "#"+targetHash);
         }
@@ -165,4 +160,5 @@
       plugin.init();
     });
   };
-})(jQuery);
+
+}
