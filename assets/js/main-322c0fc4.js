@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){e("#menus").menuOnScroll({headerOffset:60,footerOffset:30,scrollOnClickOffset:20})});

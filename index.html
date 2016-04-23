@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Use title if it's in the page YAML frontmatter -->
+        <title>menuOnScroll - jQuery Plugin</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width initial-scale=1.0 />
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="assets/css/normalize-ec2a8901.css">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/css/main-63266526.css">
+        <script src="assets/js/vendor/modernizr-2.6.1.min-68fdcc99.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <div id="navigation">
+  <div class="inner-navigation wrap clearfix">
+    <ul id="menus">
+      <li class="menu-item"><a href="#intro">Intro</a></li>
+      <li class="menu-item"><a href="#installation">Installation</a></li>
+      <li class="menu-item"><a href="#options">Options</a></li>
+    </ul>
+  </div>
+</div>
+
+<div id="container">
+  <section id="intro">
+    <div class="wrap clearfix">
+      <h1>menuOnScroll</h1>
+      <h3>A jQuery plugin that automatically updates navigation when scrolling</h3>
+    </div>
+  </section>
+  <section id="installation">
+    <div class="wrap clearfix">
+      <h2 class="no-margin-bottom no-margin-top">Installation</h2>
+      <p>Download the source code <a class="yellow-text" href="https://github.com/pmkhoa/jquery-menuOnScroll/archive/v0.1.1.zip">here</a>, and follow two simple steps as below. That is it!</p>
+      <div class="installation-guide-wrapper clearfix">
+        <div class="installation-guide">
+          <h3>Javascript</h3>
+          <p>Include jQuery 1.8+ and the menuOnScroll plugin either in the footer or header of your website.</p>
+          <p>You can then initialize the plugin right after the document is ready.</p>
+        </div>
+        <div class="installation-illustration">
+          <pre>
+&lt;script src="path/to/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/jquery.menuOnScroll.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(document).ready(function() {
+    $("#menu").menuOnScroll();
+  });
+&lt;/script&gt;
+          </pre>
+        </div>
+      </div>
+      <div class="installation-guide-wrapper clearfix">
+        <div class="installation-guide">
+          <h3>HTML</h3>
+          <p>You have full control of what element you want to use for this plugin. However, it's designed specifically for the navigation of one-page website. Like this site!</p>
+        </div>
+        <div class="installation-illustration">
+          <pre>
+&lt;ul id="menus"&gt;
+  &lt;li class="menu-item"&gt;
+    &lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li class="menu-item"&gt;
+    &lt;a href="#installation"&gt;Installation&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div id="container"&gt;
+  &lt;div id="introduction"&gt;...&lt;/div&gt;
+  &lt;div id="installation"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="options">
+    <div class="wrap clearfix">
+      <h2 class="no-margin-bottom">Options</h2>
+      <p>The plugin requires no extra configuration if you follow the HTML markup above. However, it still offers the flexibility that you can configure to meet your requirements.</p> 
+      <div class="option">
+        <h3 class="no-margin-bottom">menuActiveClass</h3>
+        <p>
+          Type: <code>String</code><br/>
+          Default: <code>"active"</code>
+        </p>
+        <p>The class that attaches to the menu item when it's active.</p>
+      </div>
+
+      <div class="option">
+        <h3 class="no-margin-bottom">menuSelector</h3>
+        <p>
+          Type: <code>Class Selector</code><br/>
+          Default: <code>".menu-item"</code>
+        </p>
+        <p>The class name of the menu item.</p>
+      </div>
+
+      <div class="option">
+        <h3 class="no-margin-bottom">headerOffset</h3>
+        <p>
+          Type: <code>Number</code><br/>
+          Default: <code>0</code>
+        </p>
+        <p>The height of the fixed header</p> 
+      </div>
+
+      <div class="option">
+        <h3 class="no-margin-bottom">footerOffset</h3>
+        <p>
+          Type: <code>Number</code><br/>
+          Default: <code>0</code>
+        </p>
+        <p>The offset value of footer (if has one), this is used when you want last menu item become active when the page hits the bottom.</p>
+      </div>
+
+      <div class="option">
+        <h3 class="no-margin-bottom">scrollOnClickOffset</h3>
+        <p>
+          Type: <code>Number</code><br/>
+          Default: <code>20</code>
+        </p>
+        <p>The offset value used for scroll to element when the menu item is clicked.</p>
+      </div>
+    </div>
+  </section>
+</div> <!-- End content wrapper -->
+<div id="footer">
+  <div class="footer-innter wrap clearfix">
+    <a class="ask-me" href="mailto:khoa.pham@me.com">Need it more customized? Ask me!</a>
+    <ul class="social-contacts">
+      <li><a class="github" href="https://github.com/pmkhoa/jquery-menuOnScroll">Github</a></li>
+      <li><a class="twitter" href="https://twitter.com/pmkhoa">Twitter</a></li>
+      <li><a class="linkedin" href="https://www.linkedin.com/in/pmkhoa">Linkedin</a></li>
+    </ul>
+  </div>
+</div>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="assets/js/plugins-53b82e11.js"></script>
+        <script src="assets/js/app-0fe7942a.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-41349606-3', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+    </body>
+</html>
